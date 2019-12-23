@@ -1,0 +1,55 @@
+<html>  
+  <head>
+      <style>
+          input[type=text] {
+              width: 60%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              box-sizing: border-box;
+          }
+          input[type=submit]{
+              background-color: #009879;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-decoration: none;
+              margin: 4px 2px;
+              cursor: pointer;
+           }
+      </style>
+    <link href = 'static/css/style.css' rel = 'stylesheet' media="screen,projection" type="text/css">
+  </head>
+<body>
+    <div align = 'center' style="background-color:#009879">
+        <h3 style='color:white'>BhavCopy</h3>
+    </div>
+    <form method = 'GET' action = 'get_data'>
+        <div align = "center">
+            <h6>Top 10 Details from the CSV</h6>
+            <table class="content-table">
+                <thead>
+                    {% for key in data.keys() %}
+                        <th>{{key}}</th>
+                    {% endfor %}
+                </thead>
+                <tbody>       
+                    {% for i in range(10) %}
+                        <tr>
+                            <td>{{data.code[i].decode("utf-8")}}</td>
+                            <td>{{data.name[i].decode("utf-8")}}</td>
+                            <td>{{data.open[i].decode("utf-8")}}</td>
+                            <td>{{data.high[i].decode("utf-8")}}</td>
+                            <td>{{data.low[i].decode("utf-8")}}</td>
+                            <td>{{data.close[i].decode("utf-8")}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div align = "center">
+            <input type = "text" name = 'name' placeholder = "Enter Name To Search Here..." />
+            <input type = "submit" value="Search"/>
+        </div>
+    </form>
+    </body>
+</html>
