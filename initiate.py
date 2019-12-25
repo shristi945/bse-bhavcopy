@@ -179,19 +179,20 @@ class Index(object):
             return self.insert_data_to_db(csv_url)
         else:
             return "file not on website"
-
-    
-    
+            
+            
 if __name__ == '__main__':
-    conf = {
-        '/': {
-            'tools.sessions.on': True,
-            'tools.staticdir.root': os.path.abspath(os.getcwd())
-        },
+    
+    config = {
+        
         '/static': {
+            'tools.staticdir.root': os.path.dirname(os.path.abspath(__file__)),
             'tools.staticdir.on': True,
             'tools.staticdir.dir': './public'
         }
     }
     # RUN
-    cherrypy.quickstart(Index(), '/', conf)
+    cherrypy.quickstart(Index(), '/', config=config)
+
+    
+    
