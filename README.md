@@ -12,7 +12,7 @@ Simple application to parse a csv file from a zip folder on a url and store it i
 
 # Tools used:
 
-Python ->Backend
-CherryPy ->python framework
-Redis -> Database
+1. Python ->Backend
+2. CherryPy ->python framework
+3. Redis -> Database
 
