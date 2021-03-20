@@ -1,7 +1,7 @@
 beautifulsoup4==4.8.0
 CherryPy==18.4.0
 gunicorn==20.0.4
-Jinja2==2.10.3
+Jinja2==2.11.3
 redis==3.3.11
 requests==2.22.0
 zipfile36==0.1.3
